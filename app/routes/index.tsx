@@ -22,6 +22,7 @@ export const router = createBrowserRouter([
       { path: "login", lazy: () => import("./login") },
       { path: "privacy", lazy: () => import("./privacy") },
       { path: "terms", lazy: () => import("./terms") },
+      { path: "pricing", lazy: () => import("./pricing") },
     ],
   },
   {
@@ -31,8 +32,9 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <Navigate to="/dashboard" replace /> },
       { path: "dashboard", lazy: () => import("./dashboard") },
-      { path: "tasks", lazy: () => import("./tasks") },
+      { path: "tests", lazy: () => import("./tests") },
       { path: "messages", lazy: () => import("./messages") },
+      { path: "pricing", lazy: () => import("./pricing") },
     ],
   },
 ]);
