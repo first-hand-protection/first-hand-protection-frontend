@@ -31,11 +31,12 @@ export const Navigation = memo(function Navigation(
     >
       <NavItem path="/dashboard" label="Dashboard" icon={<Dashboard />} />
       <NavItem
-        path="/tasks"
-        label="Tasks"
+        path="/tests"
+        label="Tests"
         icon={<AssignmentTurnedInRounded />}
       />
       <NavItem path="/messages" label="Messages" icon={<ChatRounded />} />
+      <NavItem path="/pricing" label="Subscribe Now!" icon={<ChatRounded />} />
     </List>
   );
 });
