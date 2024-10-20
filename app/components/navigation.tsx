@@ -16,12 +16,13 @@ import {
 } from "@mui/joy";
 import { ReactNode, memo } from "react";
 import { Link, useMatch } from "react-router-dom";
+import { useCurrentUser } from "../core/auth";
 
 export const Navigation = memo(function Navigation(
   props: NavigationProps,
 ): JSX.Element {
   const { sx, ...other } = props;
-
+  const user = useCurrentUser();
   return (
     <List
       sx={{ "--ListItem-radius": "4px", ...sx }}
@@ -29,14 +30,30 @@ export const Navigation = memo(function Navigation(
       role="navigation"
       {...other}
     >
-      <NavItem path="/dashboard" label="Dashboard" icon={<Dashboard />} />
-      <NavItem
-        path="/tests"
-        label="Tests"
-        icon={<AssignmentTurnedInRounded />}
-      />
-      <NavItem path="/messages" label="Messages" icon={<ChatRounded />} />
-      <NavItem path="/pricing" label="Subscribe Now!" icon={<ChatRounded />} />
+      {user ? (
+        <>
+          <NavItem path="/dashboard" label="Dashboard" icon={<Dashboard />} />
+          <NavItem
+            path="/create-a-test"
+            label="Create A Test"
+            icon={<AssignmentTurnedInRounded />}
+          />
+          <NavItem
+            path="/tests"
+            label="Tests"
+            icon={<AssignmentTurnedInRounded />}
+          />
+          <NavItem path="/messages" label="Messages" icon={<ChatRounded />} />
+        </>
+      ) : (
+        <>
+          <NavItem
+            path="/pricing"
+            label="View Plans Now!"
+            icon={<ChatRounded />}
+          />
+        </>
+      )}
     </List>
   );
 });

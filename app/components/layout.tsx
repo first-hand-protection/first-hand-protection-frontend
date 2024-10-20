@@ -1,6 +1,7 @@
 /* SPDX-FileCopyrightText: 2014-present Kriasoft */
 /* SPDX-License-Identifier: MIT */
 
+// Import predefined theme
 import { Box, GlobalStyles } from "@mui/joy";
 import { Fragment, Suspense } from "react";
 import { Outlet } from "react-router-dom";
@@ -24,6 +25,7 @@ export function MainLayout(): JSX.Element {
           },
         }}
       />
+      {/* Apply predefined theme */}
       <Toolbar sx={{ gridArea: "1 / 2 / 2 / -1" }} />
 
       <Sidebar sx={{ gridArea: "1 / 1 / -1 / 2" }} />

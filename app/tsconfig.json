@@ -8,7 +8,9 @@
     "outDir": "../.cache/typescript-app",
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "noEmit": true
+    "noEmit": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": ["**/*.ts", "**/*.d.ts", "**/*.tsx", "**/*.json"],
   "exclude": ["dist/**/*", "vite.config.ts"],
